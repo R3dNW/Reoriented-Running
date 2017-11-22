@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 51ecd38626a153442b30ff55d0bbf4af
+timeCreated: 1511210547
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: TruncatedCube_Bottom
+    100004: TruncatedCube_Top
+    100006: TruncatedCube_Collider_001
+    100008: TruncatedCube_Collider_002
+    100010: TruncatedCube_Collider_003
+    100012: TruncatedCube_Collider_004
+    100014: TruncatedCube_Collider_005
+    100016: TruncatedCube_Collider_006
+    100018: TruncatedCube_Collider_007
+    100020: TruncatedCube_Collider_008
+    100022: TruncatedCube_Collider_009
+    100024: TruncatedCube_Collider_010
+    100026: TruncatedCube_Collider_011
+    100028: TruncatedCube_Collider_012
+    100030: TruncatedCube_Collider_013
+    100032: TruncatedCube_Collider_014
+    100034: TruncatedCube_Collider_015
+    100036: TruncatedCube_Collider_016
+    100038: TruncatedCube_Collider_017
+    100040: TruncatedCube_Collider_018
+    100042: TruncatedCube_Collider_019
+    100044: TruncatedCube_Collider_020
+    100046: TruncatedCube_Collider_021
+    100048: TruncatedCube_Collider_022
+    100050: TruncatedCube_Collider_023
+    100052: TruncatedCube_Collider_024
+    100054: TruncatedCube_Collider_025
+    100056: TruncatedCube_Collider_026
+    400000: //RootNode
+    400002: TruncatedCube_Bottom
+    400004: TruncatedCube_Top
+    400006: TruncatedCube_Collider_001
+    400008: TruncatedCube_Collider_002
+    400010: TruncatedCube_Collider_003
+    400012: TruncatedCube_Collider_004
+    400014: TruncatedCube_Collider_005
+    400016: TruncatedCube_Collider_006
+    400018: TruncatedCube_Collider_007
+    400020: TruncatedCube_Collider_008
+    400022: TruncatedCube_Collider_009
+    400024: TruncatedCube_Collider_010
+    400026: TruncatedCube_Collider_011
+    400028: TruncatedCube_Collider_012
+    400030: TruncatedCube_Collider_013
+    400032: TruncatedCube_Collider_014
+    400034: TruncatedCube_Collider_015
+    400036: TruncatedCube_Collider_016
+    400038: TruncatedCube_Collider_017
+    400040: TruncatedCube_Collider_018
+    400042: TruncatedCube_Collider_019
+    400044: TruncatedCube_Collider_020
+    400046: TruncatedCube_Collider_021
+    400048: TruncatedCube_Collider_022
+    400050: TruncatedCube_Collider_023
+    400052: TruncatedCube_Collider_024
+    400054: TruncatedCube_Collider_025
+    400056: TruncatedCube_Collider_026
+    2300000: //RootNode
+    2300002: TruncatedCube_Bottom
+    2300004: TruncatedCube_Top
+    2300006: TruncatedCube_Collider_001
+    2300008: TruncatedCube_Collider_002
+    2300010: TruncatedCube_Collider_003
+    2300012: TruncatedCube_Collider_004
+    2300014: TruncatedCube_Collider_005
+    2300016: TruncatedCube_Collider_006
+    2300018: TruncatedCube_Collider_007
+    2300020: TruncatedCube_Collider_008
+    2300022: TruncatedCube_Collider_009
+    2300024: TruncatedCube_Collider_010
+    2300026: TruncatedCube_Collider_011
+    2300028: TruncatedCube_Collider_012
+    2300030: TruncatedCube_Collider_013
+    2300032: TruncatedCube_Collider_014
+    2300034: TruncatedCube_Collider_015
+    2300036: TruncatedCube_Collider_016
+    2300038: TruncatedCube_Collider_017
+    2300040: TruncatedCube_Collider_018
+    2300042: TruncatedCube_Collider_019
+    2300044: TruncatedCube_Collider_020
+    2300046: TruncatedCube_Collider_021
+    2300048: TruncatedCube_Collider_022
+    2300050: TruncatedCube_Collider_023
+    2300052: TruncatedCube_Collider_024
+    2300054: TruncatedCube_Collider_025
+    2300056: TruncatedCube_Collider_026
+    3300000: //RootNode
+    3300002: TruncatedCube_Bottom
+    3300004: TruncatedCube_Top
+    3300006: TruncatedCube_Collider_001
+    3300008: TruncatedCube_Collider_002
+    3300010: TruncatedCube_Collider_003
+    3300012: TruncatedCube_Collider_004
+    3300014: TruncatedCube_Collider_005
+    3300016: TruncatedCube_Collider_006
+    3300018: TruncatedCube_Collider_007
+    3300020: TruncatedCube_Collider_008
+    3300022: TruncatedCube_Collider_009
+    3300024: TruncatedCube_Collider_010
+    3300026: TruncatedCube_Collider_011
+    3300028: TruncatedCube_Collider_012
+    3300030: TruncatedCube_Collider_013
+    3300032: TruncatedCube_Collider_014
+    3300034: TruncatedCube_Collider_015
+    3300036: TruncatedCube_Collider_016
+    3300038: TruncatedCube_Collider_017
+    3300040: TruncatedCube_Collider_018
+    3300042: TruncatedCube_Collider_019
+    3300044: TruncatedCube_Collider_020
+    3300046: TruncatedCube_Collider_021
+    3300048: TruncatedCube_Collider_022
+    3300050: TruncatedCube_Collider_023
+    3300052: TruncatedCube_Collider_024
+    3300054: TruncatedCube_Collider_025
+    3300056: TruncatedCube_Collider_026
+    4300000: Cube
+    4300002: TruncatedCube_Collider
+    4300004: TruncatedCube_Bottom
+    4300006: TruncatedCube_Top
+    4300008: TruncatedCube_Collider_026
+    4300010: TruncatedCube_Collider_025
+    4300012: TruncatedCube_Collider_024
+    4300014: TruncatedCube_Collider_023
+    4300016: TruncatedCube_Collider_022
+    4300018: TruncatedCube_Collider_021
+    4300020: TruncatedCube_Collider_020
+    4300022: TruncatedCube_Collider_019
+    4300024: TruncatedCube_Collider_018
+    4300026: TruncatedCube_Collider_017
+    4300028: TruncatedCube_Collider_016
+    4300030: TruncatedCube_Collider_015
+    4300032: TruncatedCube_Collider_014
+    4300034: TruncatedCube_Collider_013
+    4300036: TruncatedCube_Collider_012
+    4300038: TruncatedCube_Collider_011
+    4300040: TruncatedCube_Collider_010
+    4300042: TruncatedCube_Collider_009
+    4300044: TruncatedCube_Collider_008
+    4300046: TruncatedCube_Collider_007
+    4300048: TruncatedCube_Collider_006
+    4300050: TruncatedCube_Collider_005
+    4300052: TruncatedCube_Collider_004
+    4300054: TruncatedCube_Collider_003
+    4300056: TruncatedCube_Collider_002
+    4300058: TruncatedCube_Collider_001
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1fa6d458c645c9441b5dbcebf66a790e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
