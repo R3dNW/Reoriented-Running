@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Quaternion playerBaseRotation;
     private Quaternion cameraBaseRotation;
 
-    private float speed = 10;
+    private float speed = 25;
 
     private Vector2 rotationAngle;
 
