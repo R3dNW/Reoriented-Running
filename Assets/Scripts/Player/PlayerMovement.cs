@@ -10,12 +10,13 @@ public class PlayerMovement : MonoBehaviour
         public Vector2 rotation;
     }
 
-    public Transform playerTransform;
+    public Transform playerContainerTransform;
+    public Transform playerBodyTransform;
     public Rigidbody playerRigidbody;
     public Transform cameraTransform;
 
-    private Quaternion playerBaseRotation;
-    private Quaternion cameraBaseRotation;
+    //private Quaternion playerBaseRotation;
+    //private Quaternion cameraBaseRotation;
 
     private float speed = 25;
 
@@ -34,14 +35,21 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask metalSurfaceMask;
 
+    private Collider attachedToColl;
+    private float attachedRotationT;
+    private Quaternion attachedStartRot;
+    private Vector3 downDirection;
+
     public void Start()
     {
         this.rollingRotations = new List<TimeRotation>();
 
-        this.playerBaseRotation = this.playerTransform.rotation;
-        this.cameraBaseRotation = this.cameraTransform.rotation;
+        //this.playerBaseRotation = this.playerTransform.rotation;
+        //this.cameraBaseRotation = this.cameraTransform.rotation;
 
         Cursor.visible = false;
+
+        this.playerRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
     public void MouseRotation()
@@ -70,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
         Quaternion xQuaternion = Quaternion.AngleAxis(avgRotation.x, Vector3.up);
         Quaternion yQuaternion = Quaternion.AngleAxis(avgRotation.y, Vector3.left);
 
-        this.playerTransform.rotation = this.playerBaseRotation * xQuaternion;
-        this.cameraTransform.localRotation = this.cameraBaseRotation * yQuaternion;
+        this.playerBodyTransform.localRotation = xQuaternion;
+        this.cameraTransform.localRotation = yQuaternion;
     }
 
     public void KeyboardMovement()
@@ -99,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             movement.y /= localVelocity.y;
         }*/
 
-        this.playerRigidbody.AddRelativeForce(movement);
+        this.playerRigidbody.AddForce(this.playerBodyTransform.rotation * movement);
     }
 
     public void GroundGrip()
@@ -108,28 +116,65 @@ public class PlayerMovement : MonoBehaviour
 
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(this.playerTransform.position, -this.playerTransform.up, out hitInfo, 15, this.metalSurfaceMask))
+        if (Physics.Raycast(this.playerContainerTransform.position, -this.playerContainerTransform.up, out hitInfo, 4, this.metalSurfaceMask))
         {
-            Vector3 closestPoint = hitInfo.collider.ClosestPoint(this.playerTransform.position);
-            Debug.DrawRay(closestPoint, Vector3.up * 0.1f, Color.red, 0.02f);
-
-            Vector3 downDir = (closestPoint - this.transform.position).normalized;
-            Debug.DrawRay(this.playerTransform.position, downDir * 5, Color.blue, 0.02f);
-
-            this.playerRigidbody.AddForce(downDir * this.gripStrength);
-            this.playerBaseRotation = Quaternion.Slerp(this.playerBaseRotation, Quaternion.LookRotation(downDir, Vector3.up) * Quaternion.Euler(90, -90, 90), 0.1f);
+            AttractToCollider(hitInfo.collider, 2.25f);
         }
+        else
+        {
+            Collider[] colliders = Physics.OverlapSphere(this.playerContainerTransform.position, 50, this.metalSurfaceMask);
+            Collider bestCollider = null;
+            float bestSqrDist = Mathf.Infinity;
+
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                float sqrDist = (colliders[i].ClosestPointOnBounds(this.playerContainerTransform.position) - this.playerContainerTransform.position).sqrMagnitude;
+
+                if (sqrDist < bestSqrDist)
+                {
+                    bestCollider = colliders[i];
+                    bestSqrDist = sqrDist;
+                }
+            }
+
+            AttractToCollider(bestCollider, (1f/(bestSqrDist+1)) * 2.25f);
+        }
+    }
+
+    public void AttractToCollider(Collider collider, float rotationRate)
+    {
+        if (collider != this.attachedToColl)
+        {
+            this.attachedToColl = collider;
+            this.attachedRotationT = 0;
+            this.attachedStartRot = this.playerContainerTransform.rotation;
+        }
+
+        this.attachedRotationT = Mathf.Clamp01(this.attachedRotationT + (rotationRate * Time.deltaTime));
+
+        Vector3 closestPoint = collider.ClosestPoint(this.playerContainerTransform.position);
+        Debug.DrawRay(closestPoint, Vector3.up * 0.1f, Color.red, 0.02f);
+
+        this.downDirection = (closestPoint - this.playerContainerTransform.position).normalized;
+        Debug.DrawRay(this.playerContainerTransform.position, this.downDirection * 5, Color.blue, 0.02f);
+
+        this.playerContainerTransform.rotation = Quaternion.Slerp(
+            this.attachedStartRot,
+            Quaternion.LookRotation(Vector3.Cross(this.playerContainerTransform.right, -this.downDirection), -this.downDirection),
+            this.attachedRotationT);
     }
 
     public void Update()
     {
         this.MouseRotation();
+
+        this.GroundGrip();
     }
 
     public void FixedUpdate()
     {
         this.KeyboardMovement();
-
-        this.GroundGrip();
+        
+        this.playerRigidbody.AddForce(this.downDirection * this.gripStrength);
     }
 }
