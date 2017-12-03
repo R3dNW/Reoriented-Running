@@ -8,15 +8,30 @@ ModelImporter:
     100000: //RootNode
     100002: Cube
     100004: Icosphere
+    100006: Cube_MeshPart0
+    100008: Cube_MeshPart1
+    100010: Cube_MeshPart2
     400000: //RootNode
     400002: Cube
     400004: Icosphere
+    400006: Cube_MeshPart0
+    400008: Cube_MeshPart1
+    400010: Cube_MeshPart2
     2300000: Cube
     2300002: Icosphere
+    2300004: Cube_MeshPart0
+    2300006: Cube_MeshPart1
+    2300008: Cube_MeshPart2
     3300000: Cube
     3300002: Icosphere
+    3300004: Cube_MeshPart0
+    3300006: Cube_MeshPart1
+    3300008: Cube_MeshPart2
     4300000: Icosphere
     4300002: Cube
+    4300004: Cube_MeshPart0
+    4300006: Cube_MeshPart1
+    4300008: Cube_MeshPart2
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -24,12 +39,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: a1ca42adbe6c3604ea8b4c29a2cb9dae, type: 2}
+    second: {fileID: 2100000, guid: 95435e80e1fa55f4c9145e88be7f6bc4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: unnamed
-    second: {fileID: 2100000, guid: 63e2c33f0acc9c04faed99a5ec57e7c1, type: 2}
+    second: {fileID: 2100000, guid: d0a87c37a4eb8854d85e93e5f04f0985, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
