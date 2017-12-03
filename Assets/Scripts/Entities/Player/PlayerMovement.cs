@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     //private Quaternion cameraBaseRotation;
 
     private float speed = 25;
-    private float jumpVelocity = 10;
+    private float jumpVelocity = 12;
 
     private float savedDrag;
 

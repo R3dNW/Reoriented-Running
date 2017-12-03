@@ -49,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             RaycastHit hitInfo;
             
-            if (Physics.Raycast(this.FPSCamera.ScreenPointToRay(Input.mousePosition), out hitInfo))
+            if (Physics.Raycast(this.FPSCamera.transform.position, this.FPSCamera.transform.forward, out hitInfo))
             {
                 GameObject hitGO = hitInfo.collider.gameObject;
 
@@ -77,7 +77,7 @@ public class PlayerInteraction : MonoBehaviour
 
         this.carryingRb.velocity = Vector3.zero;
 
-        Vector3 lookingDirection = this.FPSCamera.ScreenPointToRay(Input.mousePosition).direction;
+        Vector3 lookingDirection = this.FPSCamera.transform.forward; //this.FPSCamera.ScreenPointToRay(Input.mousePosition).direction;
 
         Vector3 targetPosition =
             this.FPSCamera.transform.position
